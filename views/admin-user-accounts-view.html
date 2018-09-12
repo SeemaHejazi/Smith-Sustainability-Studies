@@ -1,0 +1,262 @@
+<div class="container-fluid">
+    <h1 class="title">User Accounts</h1>
+    <div class="row" id="top">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h3>Manage User Accounts</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="separator">
+                            <a href="#">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="userAccountsTable" class="table table-striped table-scroll table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Privilege</th>
+                                    <th>Study</th>
+                                    <th>Condition Group</th>
+                                    <th>Current Phase</th>
+                                    <th>Team Number</th>
+                                    <th class="Action">Actions  </th>
+                                </tr>
+                            </thead>
+                            <tbody id="insertUserTable">
+                                <!-- Table -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="separator">
+                                <a href="#">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3"></div>
+                        <div class="col-md-5 col-sm-5">
+                            <button type="button" class="btn btn-default long" id="create-new-account"><i class="pe-7s-add-user" aria-hidden="true"></i>CREATE A NEW USER ACCOUNT</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card  -->
+            </div>
+            <!-- col-md-10  -->
+        </div>
+        <!-- row  -->
+    </div>
+</div>
+<!-- container fluid  -->
+<div id="deleteUserAccountModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <div class="col-sm-2 pull-right">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary btn-block" id="delete">Delete</button>
+                </div>
+                <div class="col-sm-2 pull-right">
+                    <button type="button" data-dismiss="modal" class="btn btn-danger btn-block" id="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="newUserAccountModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">New User Account: </h2>
+            </div>
+            <div class="modal-body">
+                <form id="newUserAccountModalForm" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="userName" class="col-sm-3 control-label">Username</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter User Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">Password</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">E-Mail Address</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="privilegeLevelSelector" class="col-sm-3 control-label">Privilege Level</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="privilegeLevelSelector" name="privilegeLevelSelector">
+                                <option value="user" selected>user</option>
+                                <option value="admin">admin</option>
+                                <option value="super_admin">super admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-4 center-text">
+                            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                        </div>
+                        <div class="col-sm-offset-2 col-sm-4 center-text">
+                            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="editUserAccountModal" class="modal fade" role="dialog">
+    <form id="editUserAccountModalForm" class="form-horizontal" role="form">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Edit User Account: </h2>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="userName" class="col-sm-3 control-label">Username</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="userName" name="userName" placeholder="Enter User Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">E-Mail Address</label>
+                        <div class="col-sm-6">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="studyID" class="col-sm-3 control-label">Study</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="studyIDSelector" name="studyIDSelector">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentConditionGroup" class="col-sm-3 control-label">Condition Group</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="currentConditionGroupSelector" name="currentConditionGroupSelector">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentPhase" class="col-sm-3 control-label">Current Phase</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="currentPhaseSelector" name="currentPhaseSelector">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="teamNum" class="col-sm-3 control-label">Team Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="teamNum" name="teamNum" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-sm-offset-2 col-sm-4 center-text">
+                        <button type="submit" class="btn btn-primary btn-block">Update Account</button>
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-4 center-text">
+                        <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="manageStudiesUserAccountModal" class="modal fade" role="dialog">
+    <form id="manageStudiesUserAccountForm" class="form-horizontal" role="form">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Add or Remove Admin from Studies</h3>
+                    <p>(these changes are applied immediately)</p>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group justify-content-between">
+                        <div class="col-sm-4">
+                            <p>Studies Currently Accessesible</p>
+                            <select class="form-control" id="inStudySelector" name="inStudySelector">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button type="button" class="btn btn-default btn-new" id="removeManageStudiesUserAccountButton" name="removeManageStudiesUserAccountButton"><i class='pe-7s-less'></i></button>
+                                <button type="button" class="btn btn-default btn-new" id="addManageStudiesUserAccountButton" name="addManageStudiesUserAccountButton"><i class='pe-7s-plus'></i></button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>Studies Currently Not Accessesible</p>
+                            <select class="form-control" id="outStudySelector" name="outStudySelector">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>                
+                </div>
+                <div class="modal-footer  justify-content-between">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

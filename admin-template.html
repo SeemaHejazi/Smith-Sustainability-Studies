@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Smith core CSS -->
+        <link rel="stylesheet" href="css/Template.css">
+        <!-- Icons -->
+        <link rel="stylesheet" href="css/pe-icon-7-stroke.css">
+        <!-- Fonts -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin|Raleway" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+
+        <title>Smith Sustainability Studies</title>
+    </head>
+
+    <body onload="loadAdminHomeView()">
+        <!--Navigation-->
+        <div class="wrapper">
+            <div class="sidebar" data-color="azure" data-image="img/Stock1.jpg" style="background-image: url(img/Stock1.jpg);">
+                <div class="sidebar-wrapper">
+                    <div class="logo">
+                        <a class="simple-text" href="#">SMITH SUSTAINABILITY STUDIES</a>
+                    </div>
+                    <div class="logo logo-mini">
+                        <a href="#" class="simple-text">
+                            SMITH
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li class="active" id="adminHome">
+                            <a href="#" onclick="loadAdminHomeView()">
+                                <i class="pe-7s-home"></i>
+                                <p>Home<p>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="separator">
+                                <a href="#"></a>
+                            </div>
+                        </li>
+                        <li id="loadAdminUserAccounts">
+                            <a href="#" onclick="loadAdminUserAccountsView()">
+                                <i class="pe-7s-users"></i>
+                                <p>USER ACCOUNTS</p>
+                            </a>
+                        </li>
+                        <li id="loadMonitorUsers">
+                            <a href="#" onclick="loadAdminMonitorUsersView()">
+                                <i class="pe-7s-note2"></i>
+                                <p>MONITOR USERS</p>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="separator">
+                                <a href="#"></a>
+                            </div>
+                        </li>
+                        <li id="loadAdminCreateStudy">
+                            <a href="#" onclick="loadAdminCreateStudyView()">
+                                <i class="pe-7s-leaf"></i>
+                                <p>CREATE STUDY</p>
+                            </a>
+                        </li>
+                        <li id="loadManageStudies">
+                            <a href="#" onclick="loadAdminManageStudiesView()">
+                                <i class="pe-7s-config"></i>
+                                <p>MANAGE STUDIES</p>
+                            </a>
+                        </li>
+                        <li id="loadMonitorStudies">
+                            <a href="#" onclick="loadAdminMonitorStudiesView()">
+                                <i class="pe-7s-graph1"></i>
+                                <p>MONITOR STUDIES</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+                <!--sidebar-wrapper-->
+            </div> 
+            <!-- sidebar -->
+            <div class="main-panel">
+                <nav class="navbar navbar-fixed">
+                    <div class="container-fluid">
+                        <!-- Logo -->
+                        <div class="navbar-minimize">
+                            <button id="minimizeSidebar" class="btn btn-fill btn-icon"><i class="pe-7s-angle-left-circle"></i></button>
+                        </div>
+                        <div class="navbar-header" id="navbar">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main"> 
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="admin-template.html"> ADMIN</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li id="profileView">
+                                    <a href="#" onclick="loadAdminProfileView()">
+                                        <i class="pe-7s-user"></i> 
+                                        <p>My Account</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" id="admin-logout">
+                                        <i class="pe-7s-close-circle"></i>
+                                        <p>Log out</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div> 
+                    </div>
+                </nav>      
+                <div class="content">    
+                    <div id="viewGoesHere">
+                        <!-- Inputs Home View -->
+                    </div>
+                </div>         
+                <footer class="footer">
+                    <div class="container-fluid" id="user-footer">
+                        <p class="pull-left">
+                            <a href="#" style="color: #66615B; font-size: 11px">
+                                &ldquo;We don&#39;t inherit the earth from our ancestors, we borrow it from our children.&rdquo; &#45; David Brower
+                            </a>
+                        </p>
+                        <p class="copyright pull-right"> &copy; Copyright 2017</p>
+                    </div>
+                </footer>
+            </div> <!--main panel-->
+
+        </div>
+
+        <!--JavaScript-->
+        <script src="vendor/jquery-3.1.1.min.js"></script>
+        <script src="vendor/bootstrap.min.js"></script>
+        <script src="vendor/jquery-ui.min.js"></script>
+        <script src="vendor/jquery.validate.js"></script>
+
+        <!-- DataTables JavaScript -->
+        <script src="vendor/bootstrap-table.js"></script>
+        <script src="vendor/jquery.datatables.js"></script>
+
+        <!-- ADDons -->
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.jquery.min.js"></script> -->
+
+        <!-- Misc Plug-ins -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+         <!--Load the AJAX API for charts-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <!-- Controllers -->
+        <script src="js/Template.js"></script>
+        <script src="js/utilities.js"></script>
+        <script src="js/admin-user-template-ctr.js"></script>
+
+        <script src="js/admin-home-ctr.js"></script>
+        <script src="js/admin-user-accounts-ctr.js"></script>
+        <script src="js/admin-monitor-users-ctr.js"></script>
+        <script src="js/admin-create-study-ctr.js"></script>    
+        <script src="js/admin-manage-studies-ctr.js"></script> 
+        <script src="js/admin-monitor-studies-ctr.js"></script>
+        <script src="js/admin-profile-ctr.js"></script> 
+    </body>
+
+</html>

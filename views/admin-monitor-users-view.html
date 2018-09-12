@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <h1 class="title">Monitor Users</h1>
+    <div class="row" id="top">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h3>Data Inputs</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="separator">
+                            <a href="#">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-1 col-sm-offset-1 control-label big">Ignored Studies:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="addStudySelector" name="addStudySelector">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-default" id="addStudyButton" name="addStudyButton"><i class='btn-new pe-7s-plus'></i></button>
+                            <button type="button" class="btn btn-default" id="removeStudyButton" name="removeStudyButton"><i class='btn-new pe-7s-less'></i></button>
+                        </div>
+                    </div>
+                    <label class="col-sm-1 control-label big">Visible Studies:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="removeStudySelector" name="removeStudySelector">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-1 col-sm-offset-1 control-label big">Ignored Users:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="addUserSelector" name="addUserSelector">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="btn-group btn-group-sm" role="group">
+                            <button type="button" class="btn btn-default btn-new" id="addUserButton" name="addUserButton"><i class='pe-7s-plus'></i></button>
+                            <button type="button" class="btn btn-default btn-new" id="removeUserButton" name="removeUserButton"><i class='pe-7s-less'></i></button>
+                        </div>
+                    </div>
+                    <label class="col-sm-1 control-label big">Visible Users:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="removeUserSelector" name="removeUserSelector">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-sm-offset-1" >
+                        <button type="button" class="btn btn-default pull-left long" id="adminMonitorUserExtractRawData" name="adminMonitorUserExtractRawData"><i class="pe-7s-download" aria-hidden="true"></i>DOWNLOAD ALL DATA</button>
+                    </div>
+                    <label class="col-sm-2 control-label text-right big formStyle">Save Filename:</label>
+                    <input class="col-sm-3 inputfield" id="adminMonitorUserToSaveAsFilename"></input>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="separator">
+                            <a href="#">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="top">
+                    <div class="col-md-12">
+                        <p style="padding:6px;"></p>
+                        <table id="monitorUserTable" class="table table-scroll table-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                            <!-- dynamically insert header here -->
+                            <thead>
+                                <tr id="insertMonitorUserTableHeader">
+                                </tr>
+                            </thead>
+                            <!-- dynamically insert content here -->
+                            <tbody id="insertMonitorUserTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
